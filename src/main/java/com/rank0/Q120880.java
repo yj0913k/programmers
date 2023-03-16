@@ -1,8 +1,6 @@
 package com.rank0;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class Q120880 {
 
@@ -23,6 +21,7 @@ public class Q120880 {
             }
             return Dx - Dy;
         });
+
         int[] answer = new int[numlist.length];
 
         for (int i = 0; i < arr.length; i++) {
