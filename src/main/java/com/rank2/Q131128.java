@@ -22,7 +22,7 @@ public class Q131128 {
         }
         sb.reverse();
         if(sb.length()==0) sb.append(-1);
-        else if(sb.length()==count) return "0";
+        else if(sb.length()==count)
         System.out.println(sb.toString());
     }
     private static Map<Character, Integer> numCount(String s) {
