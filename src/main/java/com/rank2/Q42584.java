@@ -15,20 +15,26 @@ public class Q42584 {
         //3은 " 1,2가 나오는 순간까지
 
         int[] prices = {1, 2, 3, 2, 3};
-
         int[] answer = new int[prices.length];
+
+        Stack<Integer> stack = new Stack<>();
+
         for (int i = 0; i < prices.length; i++) {
-            int k = 0;
-            for (int j = i + 1; j < prices.length - 1; j++) {
-                if (prices[i] <= prices[j]) {
-                    k++;
-                } else break;
+            if(!stack.isEmpty()&&prices[stack.peek()]>prices[i]){
+                int k = stack.pop();
+                answer[k] = i - k;
             }
-            answer[i] = k;
+            else stack.push(i);
         }
-        for (int i : answer) {
-            System.out.println(i);
+        for (Integer integer : stack) {
+            System.out.println(integer);
         }
+        while (!stack.isEmpty()) {
+            int k = stack.pop();
+            answer[k] = prices.length - k - 1;//
+        }
+
+
 
     }
 }
